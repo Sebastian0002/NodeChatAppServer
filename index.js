@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
 require('dotenv').config();
@@ -10,12 +11,12 @@ require('./database/config').dbConnection();
 // App de Express
 const app = express();
 
+app.use(cors());
 app.use( express.json() );
 
 const server = require('http').createServer(app);
 module.exports.io = require('socket.io')(server);
 require('./sockets/socket');
-
 
 
 

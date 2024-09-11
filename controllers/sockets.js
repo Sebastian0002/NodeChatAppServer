@@ -19,13 +19,6 @@ const disconnectedUser = async ( uuid = '' )=>{
     return user;
 }
 const saveMessage = async (payload) =>{
-    /*
-        payload = {
-            from: 1231dqwax
-            to: 1232ascas
-            message: "hello"
-        }
-    */
     try {
         const message = new Mesagge(payload);
         await message.save();

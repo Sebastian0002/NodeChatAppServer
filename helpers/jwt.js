@@ -13,7 +13,7 @@ const generarJWT = ( uid ) => {
 
             if ( err ) {
                 // no se pudo crear el token
-                reject('No se pudo generar el JWT');
+                reject('Cannot create a JWT');
 
             } else {
                 // TOKEN!

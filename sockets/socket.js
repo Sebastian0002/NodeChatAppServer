@@ -5,7 +5,7 @@ const { connectedUser, disconnectedUser, saveMessage} = require('../controllers/
 
 // Mensajes de Sockets
 io.on('connection', (client) => {
-    console.log('Cliente conectado');
+    console.log('New client');
     const {connection, uuid} = validateJWT(client.handshake.headers['x-token']);
 
     if(!connection){ return client.disconnect();}
@@ -19,7 +19,7 @@ io.on('connection', (client) => {
     });
 
     client.on('disconnect', () => {
-        console.log('Cliente desconectado');
+        console.log('Client disconnected');
         disconnectedUser(uuid);
     });
 
